@@ -1,11 +1,11 @@
 ---
 author: w-thurston
 layout: post
-title: TEST_POST
+title: Football_TEST
 description: This is a test post to see how it all works.
 date: 2025-02-17 12:00:00 -0700
-categories: [TOP_CATEGORIE, SUB_CATEGORIE]
-tags: [TAG]     # TAG names should always be lowercase
+categories: [Football, ANALYTICS]
+tags: [Football]     # TAG names should always be lowercase
 ---
 
 
