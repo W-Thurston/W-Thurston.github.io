@@ -4,8 +4,8 @@ layout: post
 title: Sports_TEST
 description: This is a test post to see how it all works.
 date: 2025-02-17 12:00:00 -0700
-categories: [Sports, Football]
-tags: [Sports]     # TAG names should always be lowercase
+categories: [Sports Talk, Football]
+tags: [Sports Talk]     # TAG names should always be lowercase
 ---
 
 

@@ -4,8 +4,8 @@ layout: post
 title: STOCK_TEST
 description: This is a test post to see how it all works.
 date: 2025-02-17 12:00:00 -0700
-categories: [Stock, Dividend]
-tags: [Stock]     # TAG names should always be lowercase
+categories: [Stock Analysis, Dividend]
+tags: [Stock Analysis]     # TAG names should always be lowercase
 ---
 
 

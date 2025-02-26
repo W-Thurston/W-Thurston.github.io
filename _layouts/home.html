@@ -34,67 +34,71 @@ refactor: true
         {% capture _category_url %}/categories/{{ category_name | slugify | url_encode }}/{% endcapture %}
         <a href="{{ _category_url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse h-100">
           <div class="col-md-12 d-flex flex-column">
-            <div class="card-body d-flex flex-row; justify-content: center" style="flex-basis: 5%; flex-wrap: wrap;">
+            <div
+              class="card-body d-flex; justify-content: center;"
+              style="flex-basis: 3%; flex-wrap: wrap;"
+            >
               <h1
                 class="card-title my-2 mt-md-0"
-                style="color: white; text-shadow: black 0px 0px 2px;  white-space: nowrap;"
+                style="color: white; text-shadow: black 0px 0px 2px;  white-space: nowrap; text-align:center;"
               >
                 {{ category_name }}
               </h1>
 
-              <div class="post-meta flex-grow-1 d-flex align-items-stretch">
-                <div class="ms-auto">
-                  <!-- content count -->
-                  {% assign top_posts_size = site.categories[category_name] | size %}
-                  <span class="text-muted small font-weight-light">
-                    {% if sub_categories_size > 0 %}
-                      {{ sub_categories_size }}
-                      {% if sub_categories_size > 1 %}
-                        {{
-                          site.data.locales[lang].categories.category_measure.plural
-                          | default: site.data.locales[lang].categories.category_measure
-                        }}
-                      {% else %}
-                        {{
-                          site.data.locales[lang].categories.category_measure.singular
-                          | default: site.data.locales[lang].categories.category_measure
-                        }}
-                      {% endif -%}
-                      ,
-                    {% endif %}
-
-                    {{ top_posts_size }}
-
-                    {% if top_posts_size > 1 %}
+              <div class="post-meta flex-grow-1 d-flex align-items-center" style="text-align:center;">
+                <!-- content count -->
+                {% assign top_posts_size = site.categories[category_name] | size %}
+                <span
+                  class="text-muted small font-weight-light"
+                  style="display: table; margin: 0 auto;"
+                >
+                  {% if sub_categories_size > 0 %}
+                    {{ sub_categories_size }}
+                    {% if sub_categories_size > 1 %}
                       {{
-                        site.data.locales[lang].categories.post_measure.plural
-                        | default: site.data.locales[lang].categories.post_measure
+                        site.data.locales[lang].categories.category_measure.plural
+                        | default: site.data.locales[lang].categories.category_measure
                       }}
                     {% else %}
                       {{
-                        site.data.locales[lang].categories.post_measure.singular
-                        | default: site.data.locales[lang].categories.post_measure
+                        site.data.locales[lang].categories.category_measure.singular
+                        | default: site.data.locales[lang].categories.category_measure
                       }}
-                    {% endif %}
-                  </span>
-                  <!-- small-text -->
-                </div>
-                <!-- content-count -->
+                    {% endif -%}
+                    ,
+                  {% endif %}
+
+                  {{ top_posts_size }}
+
+                  {% if top_posts_size > 1 %}
+                    {{
+                      site.data.locales[lang].categories.post_measure.plural
+                      | default: site.data.locales[lang].categories.post_measure
+                    }}
+                  {% else %}
+                    {{
+                      site.data.locales[lang].categories.post_measure.singular
+                      | default: site.data.locales[lang].categories.post_measure
+                    }}
+                  {% endif %}
+                </span>
+                <!-- small-text -->
               </div>
               <!-- .post-meta -->
             </div>
             <!-- .card-body -->
-            {% if category_name == 'Learn' %}
+
+            {% if category_name == "Let's Learn" %}
               <div
                 class="card-body flex-row"
-                style="background-image: url(../assets/images/ml_learn_github_pages.webp); opacity: 0.5; flex-basis: 95%"
+                style="background-image: url(../assets/images/ml_learn_github_pages.webp); opacity: 0.5; flex-basis: 98%"
               ></div>
-            {% elsif category_name == 'Sports' %}
+            {% elsif category_name == 'Sports Talk' %}
               <div
                 class="card-body d-flex flex-row"
                 style="background-image: url(https://img.freepik.com/free-vector/realistic-american-football-stadium_52683-53798.jpg); opacity: 0.5; flex-basis: 95%; background-position: center center"
               ></div>
-            {% elsif category_name == 'Stock' %}
+            {% elsif category_name == 'Stock Analysis' %}
               <div
                 class="card-body d-flex flex-row"
                 style="background-image: url(https://img.freepik.com/free-vector/gradient-stock-market-concept-with-statistics_23-2149157696.jpg); opacity: 0.5; flex-basis: 95%"

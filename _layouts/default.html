@@ -1,7 +1,6 @@
 ---
 layout: compress
 ---
-
 <!doctype html>
 
 {% include origin-type.html %}
@@ -53,6 +52,24 @@ layout: compress
               {% assign _include_path = _include | append: '.html' %}
               {% include {{ _include_path }} lang=lang %}
             {% endfor %}
+
+            <script
+              src="https://giscus.app/client.js"
+              data-repo="W-Thurston/W-Thurston.github.io"
+              data-repo-id="R_kgDON7u7Iw"
+              data-category="General"
+              data-category-id="DIC_kwDON7u7I84CnHfc"
+              data-mapping="pathname"
+              data-strict="1"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="preferred_color_scheme"
+              data-lang="en"
+              data-loading="lazy"
+              crossorigin="anonymous"
+              async
+            ></script>
 
             {% include_cached footer.html lang=lang %}
           </div>
