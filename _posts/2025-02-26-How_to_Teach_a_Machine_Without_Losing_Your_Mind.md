@@ -11,7 +11,7 @@ tags: [let's-learn, ml-how-to, series-start]     # TAG names should always be lo
 
 # Welcome
 
-Hello and welcome to my series, *How to Teach a Machine Without Losing Your Mind!* If you've ever felt like machine learning is an exclusive club full of math wizards and cryptic equations, you're not alone. But here’s the truth: once you strip away the 'academic talk' and 'math jargon,' the core ideas are surprisingly intuitive.
+Hello and welcome to my series, *How to Teach a Machine Without Losing Your Mind!* If you've ever felt like machine learning is an exclusive club full of math wizards and cryptic equations, you're not alone. But here’s the truth: once you strip away the academic talk and math jargon the core ideas are surprisingly intuitive.
 
 In this series, I’ll break down complex Machine Learning (ML) and Artificial Intelligence (AI) concepts into plain-English explanations with rich visualizations—so you can actually *see* what’s going on. My goal? To replace confusion with clarity, skepticism with curiosity, and hesitation with confidence.
 
