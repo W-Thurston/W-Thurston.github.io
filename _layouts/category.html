@@ -37,12 +37,16 @@ refactor: true
 
       <!-- Sub-categories -->
       {% if sub_categories_size > 0 %}
-        <div id="post-list" class="flex-grow-1 px-xl-1" style="display: flex; justify-content: space-between;">
+        <div
+          id="post-list"
+          class="flex-grow-1 px-xl-1"
+          style="display: flex; justify-content: space-around; flex-wrap: wrap; flex-direction: row;"
+        >
           {% for sub_category in sub_categories %}
             <article
               id="{{ HEAD_PREFIX }}{{ group_index }}"
               class="card-wrapper card"
-              style="flex-basis: 32%; height: 400px"
+              style="height: 400px; width: 254px"
             >
               {% capture _sub_ctg_url %}/categories/{{ sub_category | slugify | url_encode }}/{% endcapture %}
               <a href="{{ _sub_ctg_url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse h-100">

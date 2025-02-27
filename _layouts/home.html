@@ -9,7 +9,11 @@ refactor: true
 
 {% assign category_list = site.categories | sort %}
 
-<div id="post-list" class="flex-grow-1 px-xl-1" style="display: flex; justify-content: space-between;">
+<div
+  id="post-list"
+  class="flex-grow-1 px-xl-1"
+  style="display: flex; justify-content: space-around; flex-wrap: wrap; flex-direction: row;"
+>
   <!-- top-category -->
   {% for category in category_list %}
     {% assign category_name = category | first %}
@@ -30,7 +34,7 @@ refactor: true
 
       {% assign sub_categories = sub_categories | sort %}
       {% assign sub_categories_size = sub_categories | size %}
-      <article id="{{ HEAD_PREFIX }}{{ group_index }}" class="card-wrapper card" style="flex-basis: 32%; height: 400px">
+      <article id="{{ HEAD_PREFIX }}{{ group_index }}" class="card-wrapper card" style="height: 400px; width: 254px">
         {% capture _category_url %}/categories/{{ category_name | slugify | url_encode }}/{% endcapture %}
         <a href="{{ _category_url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse h-100">
           <div class="col-md-12 d-flex flex-column">
