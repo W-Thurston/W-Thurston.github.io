@@ -14,9 +14,9 @@ Hey you.\
 Come closer.\
 I have a secret to share: When it comes to machine learning, there is one function to rule them all.\
 \
-$$\begin{eqnarray}
-Y = f\left( X \right) + \epsilon \\
-\end{eqnarray}$$
+\begin{eqnarray}
+  Y = f\left( X \right) + \epsilon \tag{1}\\
+\end{eqnarray}
 \
 There you go, now you know how every machine learning algorithm out there works!\
 See you next time!\
@@ -38,14 +38,14 @@ Where:
 The phrase “any function you can imagine” might sound vague, so let's clarify. What I mean is that any equation you've ever seen—whether it's a simple, recognizable one like the 
 equation for a line, $$y = mx + b$$ or or something as complex as the equations that define a [Long Short Term Memory (LSTM) Cell](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 —they're all just different functions that transform input into output.  So whenever you see $$f(X)$$ (pronounced "F of X"), just know that you are passing some input data ($$X$$) into
- a function, equation, or series of equations, and you now expect some output data ($$Y$$).\
+ a function, equation, or series of equations, and you now expect some output data ($$Y$$).
 
 ### The Difference maker: $$\epsilon$$
 
 At this point, you could go out and start implementing algorithms to make predictions on anything and everything.  But before you do, there's one small detail that can make or 
 break your models (and possibly your will to continue in this field): $$\epsilon$$.  This little variable, tacked onto the end of our equation $$(1)$$, is more important than it might seem.  
 It acts as a  catch-all that fills in the gap between the output of your function $$f(X)$$ and the *true* relationship between your inputs ($$X$$) and their actual outputs.  
-In other words, $$\epsilon$$ reminds us that our model will never perfectly capture reality—there's always some level of uncertainty, missing information, or randomness at play.\
+In other words, $$\epsilon$$ reminds us that our model will never perfectly capture reality—there's always some level of uncertainty, missing information, or randomness at play.
 
 So, you might be saying: "That's all good and dandy, but how do I go from this equation to something I can actually use in the real world?" That is a the perfect segue into the next section,
 unfortunately for you and for this article's writing flow, there is one more section that I want to mention to really drill home the importance of $$f(X)$$.
@@ -54,7 +54,7 @@ unfortunately for you and for this article's writing flow, there is one more sec
 
 In reality, there is a second equation that we will be working with:
 \begin{eqnarray}
-  \hat{Y} \approx \hat{f}(X) \\\\<br>
+  \hat{Y} \approx \hat{f}(X) \tag{2}\\\\<br>
 \end{eqnarray}
 
 This equation introduces the 'hat' symbol ( $$\hat{Y}$$, pronounced 'Y hat' ), which tells us that what we are looking at is an estimation and not necesasrily the "true" function. In our case, 
