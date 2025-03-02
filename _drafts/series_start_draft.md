@@ -20,7 +20,8 @@ By the end, you won’t just understand the fundamentals of machine learning—y
 # How We'll Get There 
 
 1. [Why the "F" does it matter?](../Why_the_F_does_it_matter)
-2. ... Coming Soon!
+2. [How Machines Learn to Fit in and Just be Ordinary](../How_Machines_Learn_to_Fit_in_and_Just_be_Ordinary)
+3. ... Coming Soon!
 
 
 Grab your favorite warm beverage, turn on your study tunes, and, most importantly, don’t worry – we’ll make machines learn, together.
