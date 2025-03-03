@@ -11,7 +11,7 @@ tags: [Stock Analysis]     # TAG names should always be lowercase
 
 # Welcome
 
-Hello and welcome to my homelab doc site!
+Hello and welcome! This is just a test page for future content. For now it allows me to test website functionality.
 
 ### What is Lorem Ipsum?
 
