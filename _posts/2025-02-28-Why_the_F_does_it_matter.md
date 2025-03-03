@@ -54,7 +54,7 @@ unfortunately for you and for this article's writing flow, there is one more sec
 
 In reality, there is a second equation that we will be working with:
 \begin{eqnarray}
-  \hat{Y} \approx \hat{f}(X) \tag{2}\\\\<br>
+  \hat{Y} = \hat{f}(X) \tag{2}\\\\<br>
 \end{eqnarray}
 
 This equation introduces the 'hat' symbol ( $$\hat{Y}$$, pronounced 'Y hat' ), which tells us that what we are looking at is an estimation and not necesasrily the "true" function. In our case, 
