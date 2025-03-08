@@ -112,14 +112,16 @@ Important pieces of information to highlight are:
 Now that you have had some time to play with the graph above, I would like to add some additional insights to solidify your understanding of this topic. We now understand the blue points on the graph to be our input data. As we alter these points, whether that be adding more, removing some, or moving them about, we see the impact it has on the orange regresssion line. Think of those actions you are taking on the blue points as altering our input dataset similar to how you would add, remove or change a row or cell in Excel. The beige lines connecting the blue points to the orange regression line are our residuals and the intersection between the regression line and each residual line is the output or prediction of our model.  $$\beta_{1}$$ and $$\beta_{0}$$ are calculated via equations $$(6)$$ and $$(7)$$ respectively and are how we generate the regression line.
 
 If we take these concepts and connect them back to the equations we have above we get the following:
-- $$\hat{y} = \hat{\beta_{0}} + \hat{\beta_{1}}x $$ 
-  - $$\hat{y}$$: The intersection between the regression line and residual.
-  - $$\beta_{0}$$ and $$\beta_{1}$$: Shown in the upper left of the graph and are the intercept and slope of the regression line.
-  - $$x$$: The X coordinate of the current blue point. 
-- $$e_{i} = y_{i} - \hat{y_{i}}$$
-  - $$e_{i}$$: The length of the beige residual lines
-  - $$y_{i}$$: The Y coordinate of the current blue point. 
-  - $$\hat{y_{i}}$$: Described above
+
+$$\hat{y} = \hat{\beta_{0}} + \hat{\beta_{1}}x $$ 
+- $$\hat{y}$$: The intersection between the regression line and residual.
+- $$\beta_{0}$$ and $$\beta_{1}$$: Shown in the upper left of the graph and are the intercept and slope of the regression line.
+- $$x$$: The X coordinate of the current blue point. 
+
+$$e_{i} = y_{i} - \hat{y_{i}}$$
+- $$e_{i}$$: The length of the beige residual lines
+- $$y_{i}$$: The Y coordinate of the current blue point. 
+- $$\hat{y_{i}}$$: Described above
 <br><br>
 Now, that we have our regression line and an "error" value for each point of data, we need to calculate the Residual Sum of Squares (RSS).  But first I want to show you a second graph:
 
