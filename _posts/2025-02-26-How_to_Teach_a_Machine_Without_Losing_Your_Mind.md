@@ -24,4 +24,4 @@ By the end, you won’t just understand the fundamentals of machine learning—y
 3. ... Coming Soon!
 
 
-Grab your favorite warm beverage, turn on your study tunes, and, most importantly, don’t worry – we’ll make machines learn, together.
+So grab your favorite warm beverage, turn on your study tunes, and, most importantly, don’t worry – we’ll make machines learn, together.

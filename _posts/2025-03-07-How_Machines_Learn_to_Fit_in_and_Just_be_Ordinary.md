@@ -15,7 +15,7 @@ The natural bridge between the possibly abstract idea $$Y = f(X) + \epsilon$$ an
 
 > Assuming there is an approximately linear relationship between one independent variable ($$X$$) and a dependent variable ($$Y$$), by fitting a straight line we can predict a quantitative response ($$Y$$) on the basis of a single predictor variable ($$X$$).
 
-ZzZz...  Was that as boring for you to read as it was for me to write? I hope not! Simple linear regression is one the foundational pieces for all of machine learning and it is important for us to learn its concepts to prepare for the more exciting models and methods.  To describe it much more succinctly, simple linear regression is where we take in one input value and output a response or prediction value.  Here are a few examples to illustrate this concept:
+ZzZz...  Was that as boring for you to read as it was for me to write? I hope not! OLS or Simple linear regression is our first tool for making sense of data. It is one of the foundational pieces for all of machine learning and it is important for us to learn its concepts to prepare for the more exciting models and methods.  To describe it a little more simply, simple linear regression is where we take in one input value, plug that value into our trained model (which is just a straight line on a graph), and output a response or prediction value.  Here are a few examples to illustrate this concept:
 - Given a person's height, predict their weight.
 - Given the temperature of the day, predict the number of ice cream cones sold.
 - Given amount of time studied, predict your test score.
