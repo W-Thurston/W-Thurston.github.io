@@ -3,7 +3,7 @@ author: w-thurston
 layout: post
 title: How Machines Learn to Fit in and Just be Ordinary
 description:
-date: 2025-03-02 8:00:00 -0700
+date: 2025-03-07 8:00:00 -0700
 categories: [Let's Learn, ML How-To]
 tags: [let's-learn, ml-how-to] # TAG names should always be lowercase
 mathjax: true
