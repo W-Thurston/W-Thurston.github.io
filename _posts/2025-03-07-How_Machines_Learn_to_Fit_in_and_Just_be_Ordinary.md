@@ -9,6 +9,9 @@ tags: [let's-learn, ml-how-to] # TAG names should always be lowercase
 mathjax: true
 ---
 
+> Part 2
+{: .prompt-info }
+
 *If you don't mind, just pretend we segue'd from your question in the last article straight to this section.  I felt keeping the previous article to the single idea of understanding $$f(X)$$ to be easier on the mind than trying to also jam in this article's information.*
 
 The natural bridge between the possibly abstract idea $$Y = f(X) + \epsilon$$ and any real-world application is the **Ordinary Least Squares** (OLS) method, more commonly known as **Simple Linear Regression**.  A very *textbook* definition of Linear Regression is:
@@ -93,6 +96,8 @@ Where:
 - $$\bar{y}$$: mean of our data's y values
 - $$\bar{x}$$: mean of our data's x values
 
+### Let's Visualize
+
 Let's pause there on the information overload and step away from the equations for a moment.  I want to give you the opportunity to tanglibly interact with and see these concepts in action before we move on.  Below we have a graph of a Simple Linear Regression model.  The points on the graph are arbitrary in that I randomly chose some X and Y values to be presented to start with.  With this graph you may add, remove, or move each data point to see how the regression line and its' coefficients change based on your interactions in real time. This will help you visualize the math we have discussed so far.
 
 Important pieces of information to highlight are:
@@ -108,6 +113,8 @@ Important pieces of information to highlight are:
 
 <!-- External JS file to mount Vue -->
 <script src="/assets/js/slrLines.js" type="module"></script>
+> If you remove all the points and then start adding some back, you'll be able to watch how a linear regression model "learns".
+{: .prompt-tip }
 ---
 Now that you have had some time to play with the graph above, I would like to add some additional insights to solidify your understanding of this topic. We now understand the blue points on the graph to be our input data. As we alter these points, whether that be adding more, removing some, or moving them about, we see the impact it has on the orange regresssion line. Think of those actions you are taking on the blue points as altering our input dataset similar to how you would add, remove or change a row or cell in Excel. The beige lines connecting the blue points to the orange regression line are our residuals and the intersection between the regression line and each residual line is the output or prediction of our model.  $$\beta_{1}$$ and $$\beta_{0}$$ are calculated via equations $$(6)$$ and $$(7)$$ respectively and are how we generate the regression line.
 
