@@ -17,7 +17,7 @@ In this series, I’ll break down complex Machine Learning (ML) and Artificial I
 
 By the end, you won’t just understand the fundamentals of machine learning—you’ll want to dive deeper into its more cutting-edge techniques.
 
-## Meet our Running Examples
+## Allow me to Introduce our Cast of Characters (Data Examples)
 
 Throughout this series, I’ll return to a few recurring examples—not because they’re the most groundbreaking, but because they’re relatable, simple(ish), and each one helps reveal a different layer of what machine learning is really doing.
 

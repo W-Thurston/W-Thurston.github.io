@@ -90,7 +90,7 @@ Let's see this in action with simulated data in the context of our three running
   >
 </div>
  
-Each panel shows a different kind of relationship between our input ($$X$$) and output ($$Y$$)—from perfectly predictable to messy and chaotic.
+Each panel shows a different kind of relationship between our sample input ($$X$$) and output ($$Y$$)—from perfectly predictable to messy and chaotic.
 
 - **🧪 Fahrenheit → Celsius (Left Panel):**  
   This is function fitting at its most pure. The orange line ($$f(X)$$) and the blue line ($$\hat{f}(X)$$) are identical—no noise, no error, just a perfect linear relationship. This is what happens when the world behaves.
@@ -103,4 +103,4 @@ Each panel shows a different kind of relationship between our input ($$X$$) and 
 
 Together, these examples show how the same core idea, learning a function from data, plays out across levels of complexity. As we progress through this series, we’ll keep coming back to these examples to see how different tools handle that challenge.
 
-At its core, machine learning about finding functions that map inputs to outputs. But just knowing that $$Y=f(X)+\epsilon$$ exists isn’t enough—we need a way to actually estimate $$f(X)$$ and, ideally, we want the best possible estimate given the data we have.  With that in mind, let us turn our focus to the most simple but foundational concept in machine learning: *Ordinary Least Squares (OLS)*.
+At its core, machine learning is about finding functions that map inputs to outputs. But just knowing that $$Y=f(X)+\epsilon$$ exists isn’t enough—we need a way to actually estimate $$f(X)$$ and, ideally, we want the best possible estimate given the data we have.  With that in mind, let us turn our focus to the most simple but foundational concept in machine learning: *Ordinary Least Squares (OLS)*.

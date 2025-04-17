@@ -16,19 +16,19 @@ document.addEventListener('DOMContentLoaded', function () {
   let xAxis = d3.axisBottom(xScale);
   let yAxis = d3.axisLeft(yScale);
 
-  const app = createApp({
+  const slrLinesComponent = {
     data() {
       return {
         width: 750,
         height: 410,
         pointRadius: 8,
         points: [
-          { id: 1, x: 50, y: 18 },
-          { id: 2, x: 20, y: 4 },
-          { id: 3, x: 3, y: 3 },
-          { id: 4, x: 25, y: 12 },
-          { id: 5, x: 15, y: 11 },
-          { id: 6, x: 42, y: 12 },
+          { circleID: 1, x: 50, y: 18 },
+          { circleID: 2, x: 20, y: 4 },
+          { circleID: 3, x: 3, y: 3 },
+          { circleID: 4, x: 25, y: 12 },
+          { circleID: 5, x: 15, y: 11 },
+          { circleID: 6, x: 42, y: 12 },
         ],
         regression: { b0: 0, b1: 0 },
         residuals: [],
@@ -42,15 +42,18 @@ document.addEventListener('DOMContentLoaded', function () {
       // Get current circle function
       getCircle(circleId) {
         let vm = this;
-        let retVal = vm.points.find(({ id }) => id === circleId);
+        let retVal = vm.points.find(({ circleID }) => circleID === circleId);
         return retVal;
       },
       // Set new value for current circle's X
       setNewX(eX, new_X) {
         let vm = this;
-        let existingCircle = vm.getCircle(
-          parseInt(eX.attributes.circleID.nodeValue)
-        );
+        let circleID = parseInt(eX.dataset.circleId);
+        if (!circleID || isNaN(circleID)) {
+          console.warn('circleID is missing from dataset', eX);
+          return;
+        }
+        let existingCircle = vm.getCircle(circleID);
         if (existingCircle) {
           //Check that we found a matching circle
           existingCircle.x = clamp(
@@ -63,9 +66,12 @@ document.addEventListener('DOMContentLoaded', function () {
       // Set new value for current circle's Y
       setNewY(eY, new_Y) {
         let vm = this;
-        let existingCircle = vm.getCircle(
-          parseInt(eY.attributes.circleID.nodeValue)
-        );
+        let circleID = parseInt(eY.dataset.circleId);
+        if (!circleID || isNaN(circleID)) {
+          console.warn('circleID is missing from dataset', eY);
+          return;
+        }
+        let existingCircle = vm.getCircle(circleID);
         if (existingCircle) {
           //Check that we found a matching circle
           existingCircle.y = clamp(
@@ -87,13 +93,13 @@ document.addEventListener('DOMContentLoaded', function () {
           })
           .on('drag', function (e, d) {
             // `this` inside the call back is the circle element
-            const pt = new DOMPoint(e.clientX, e.clientY); // gives the same coordinates as pt
-            let { x, y } = pt.matrixTransform(
-              vm.$refs.coordBox.getScreenCTM().inverse()
-            );
+            // const pt = new DOMPoint(e.clientX, e.clientY); // gives the same coordinates as pt
+            // let { x, y } = pt.matrixTransform(
+            //   vm.$refs.coordBox.getScreenCTM().inverse()
+            // );
 
-            vm.setNewX(e.sourceEvent.originalTarget, xScale.invert(e.x));
-            vm.setNewY(e.sourceEvent.originalTarget, yScale.invert(e.y));
+            vm.setNewX(this, xScale.invert(e.x));
+            vm.setNewY(this, yScale.invert(e.y));
 
             // Update display of slope and intercept
             vm.updateRegression();
@@ -106,13 +112,13 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       // Draw Graph axes
       drawAxes() {
-        d3.selectAll('.svgBox')
+        d3.select(this.$el)
           .append('g')
           .call(xAxis)
           .attr('transform', 'translate(0, 370)')
           .attr('text-anchor', 'end');
 
-        d3.selectAll('.svgBox')
+        d3.select(this.$el)
           .append('g')
           .call(yAxis)
           .attr('transform', 'translate(30, 0)')
@@ -122,14 +128,14 @@ document.addEventListener('DOMContentLoaded', function () {
         let vm = this;
         const [x, y] = d3.pointer(event);
         let pointsLength = vm.points.length + 1;
-        let found = vm.points.some((el) => el.id === pointsLength);
+        let found = vm.points.some((el) => el.circleID === pointsLength);
         while (found !== false) {
           pointsLength = pointsLength + 1;
-          found = vm.points.some((el) => el.id === pointsLength);
+          found = vm.points.some((el) => el.circleID === pointsLength);
         }
 
         const newPoint = {
-          id: pointsLength,
+          circleID: pointsLength,
           x: xScale.invert(x),
           y: yScale.invert(y),
         };
@@ -144,8 +150,12 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       removePoint(e) {
         let vm = this;
-        let cID = parseInt(e.originalTarget.attributes.circleID.nodeValue);
-        let newPoints = vm.points.filter(({ id }) => id !== cID);
+        let cID = parseInt(e.currentTarget.dataset.circleId);
+        if (isNaN(cID)) {
+          console.warn('Could not find circleID on click event', e);
+          return;
+        }
+        let newPoints = vm.points.filter(({ circleID }) => circleID !== cID);
         vm.points = newPoints.map((d) => ({ ...d }));
         // Update display of slope and intercept
         vm.updateRegression();
@@ -155,7 +165,10 @@ document.addEventListener('DOMContentLoaded', function () {
       makeDraggable() {
         let vm = this;
         vm.$nextTick(() => {
-          d3.selectAll('circle').call(this.createDrag());
+          d3.select(this.$refs.coordBox)
+            .selectAll('circle')
+            .classed('draggable', true)
+            .call(this.createDrag());
         });
       },
       // Caclculate the slope and intercept of the regression line
@@ -251,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function () {
     mounted() {
       this.drawAxes(); // Initial axes draw
       this.makeDraggable();
-      this.updateRegression(); // Initial dispaly of slope and intercept
+      this.updateRegression(); // slope / intercept appear on first load
     },
     // this is the color pallete: https://coolors.co/palette/001219-005f73-0a9396-94d2bd-e9d8a6-ee9b00-ca6702-bb3e03-ae2012-9b2226
     template: `
@@ -283,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ref="draggableCircles"
         v-for="point in points"
         v-bind="getXY(point)"
-        :circleID="point.id"
+        :data-circle-id="point.circleID"
         :r="pointRadius"
         fill="#94D2BD"
         @click.stop="removePoint"
@@ -297,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ref="draggableCircles"
         v-for="point in points"
         v-bind="getXY(point)"
-        :circleID="point.id"
+        :data-circle-id="point.circleID"
         :r="pointRadius"
         fill="#94D2BD"
         stroke-width="20"
@@ -309,8 +322,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     </svg>
     `,
-  });
+  };
 
-  // Mount Vue to the empty #app div
-  app.mount('#slrLines');
+  createApp(slrLinesComponent).mount('#slrLines_1');
+  createApp(slrLinesComponent).mount('#slrLines_2');
 });

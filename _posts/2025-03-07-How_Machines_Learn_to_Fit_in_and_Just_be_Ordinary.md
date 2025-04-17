@@ -12,7 +12,17 @@ mathjax: true
 > Part 2
 {: .prompt-info }
 
-*If you don't mind, just pretend we segue'd from your question in the last article straight to this section.  I felt keeping the previous article to the single idea of understanding $$f(X)$$ to be easier on the mind than trying to also jam in this article's information.*
+Here is a teaser for what we will be building towards in this post:
+
+---
+<!-- Vue will control everything inside this div -->
+<div id="slrLines_1" style="background: #212121; border-radius: 25px; text-align: center;"></div>
+
+<!-- External JS file to mount Vue -->
+<script src="/assets/js/slrLines.js" type="module"></script>
+---
+
+*Now, if you don't mind, just pretend we segue'd from your question in the last article straight to this section.  I felt keeping the previous article to the single idea of understanding $$f(X)$$ to be easier on the mind than trying to also jam in this article's information.*
 
 The natural bridge between the possibly abstract idea $$Y = f(X) + \epsilon$$ and any real-world application is the **Ordinary Least Squares** (OLS) method, more commonly known as **Simple Linear Regression**.  A very *textbook* definition of Linear Regression is:
 
@@ -109,10 +119,12 @@ Important pieces of information to highlight are:
 
 ---
 <!-- Vue will control everything inside this div -->
-<div id="slrLines" style="background: #212121; border-radius: 25px; text-align: center;"></div>
+<div id="slrLines_2" style="background: #212121; border-radius: 25px; text-align: center;"></div>
 
 <!-- External JS file to mount Vue -->
-<script src="/assets/js/slrLines.js" type="module"></script>
+<script src="/assets/js/slrLines.js" type="module">
+  
+</script>
 > If you remove all the points and then start adding some back, you'll be able to watch how a linear regression model "learns".
 {: .prompt-tip }
 ---
